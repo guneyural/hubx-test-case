@@ -3,7 +3,23 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        mainTextColor: "#13231B",
+        main: "#28AF6E",
+      },
+      fontFamily: {
+        rubik: ["Rubik-Regular"],
+        "rubik-light": ["Rubik-Light"],
+        "rubik-medium": ["Rubik-Medium"],
+        "rubik-extrabold": ["Rubik-ExtraBold"],
+        "sf-regular": ["SF-Pro-Text-Regular"],
+        "sf-bold": ["SF-Pro-Text-Bold"],
+      },
+    },
+    screens: {
+      screen390: "390px",
+    },
   },
   plugins: [],
 };

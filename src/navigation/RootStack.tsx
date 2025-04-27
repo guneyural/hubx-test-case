@@ -4,6 +4,9 @@ import OnboardingStack from "./OnboardingStack";
 import AppStack from "./AppStack";
 import { RootStackParamList } from "./types";
 import { useAppSelector } from "../store/store";
+import * as NavigationBar from "expo-navigation-bar";
+import { useEffect } from "react";
+import { Platform } from "react-native";
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -11,6 +14,15 @@ function RootStack() {
   const onboardingCompleted = useAppSelector(
     (state) => state.initials.onboardingCompleted
   );
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS == "android") {
+        await NavigationBar.setBackgroundColorAsync("white");
+        await NavigationBar.setButtonStyleAsync("dark");
+      }
+    })();
+  }, []);
 
   return (
     <NavigationContainer>

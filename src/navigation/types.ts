@@ -1,6 +1,6 @@
 export type OnboardingStackParamList = {
   GetStarted: undefined;
-  Onboarding: undefined;
+  OnboardingScreen: undefined;
 };
 
 export type AppStackParamList = {

@@ -9,7 +9,7 @@ function OnboardingStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="GetStarted" component={GetStartedScreen} />
-      <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+      <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
     </Stack.Navigator>
   );
 }
