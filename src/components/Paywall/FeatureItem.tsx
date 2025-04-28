@@ -1,4 +1,4 @@
-import { Image, ImageSourcePropType, View } from "react-native";
+import { Image, ImageSourcePropType, Platform, View } from "react-native";
 import { BlurView } from "expo-blur";
 import { CustomText } from "../ui/CustomText";
 
@@ -9,6 +9,24 @@ interface Props {
   index: number;
 }
 
+function ItemWrapper({ children }: { children: React.ReactNode }) {
+  if (Platform.OS == "ios")
+    return (
+      <BlurView
+        intensity={16}
+        className="rounded-[14px] overflow-hidden h-[130px] w-[156px]"
+      >
+        {children}
+      </BlurView>
+    );
+
+  return (
+    <View className="rounded-[14px] bg-[#2c342e] overflow-hidden h-[130px] w-[156px]">
+      {children}
+    </View>
+  );
+}
+
 function FeatureItem({ icon, title, subtitle, index }: Props) {
   return (
     <View
@@ -17,21 +35,19 @@ function FeatureItem({ icon, title, subtitle, index }: Props) {
         borderRadius: 14,
         overflow: "visible",
         height: 135,
+        backgroundColor: "none",
         ...(index === 1
           ? {
               shadowColor: "#000000",
               shadowOffset: { width: 0, height: 4 },
               shadowOpacity: 0.25,
               shadowRadius: 4,
-              elevation: 4,
+              elevation: 1,
             }
           : {}),
       }}
     >
-      <BlurView
-        intensity={16}
-        className="rounded-[14px] overflow-hidden h-[130px] w-[156px]"
-      >
+      <ItemWrapper>
         <View className="rounded-[14px] p-4">
           <Image source={icon} className="w-[36px] h-[35.68px]" />
 
@@ -53,7 +69,7 @@ function FeatureItem({ icon, title, subtitle, index }: Props) {
             </CustomText>
           </View>
         </View>
-      </BlurView>
+      </ItemWrapper>
     </View>
   );
 }

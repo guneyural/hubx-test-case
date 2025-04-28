@@ -1,15 +1,30 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import { CustomText } from "../ui/CustomText";
 import { BlurView } from "expo-blur";
 import PremiumOptionItem from "./PremiumOptionItem";
+
+function ItemWrapper({ children }: { children: React.ReactNode }) {
+  if (Platform.OS == "ios")
+    return (
+      <BlurView intensity={16} className="rounded-[14px] overflow-hidden">
+        {children}
+      </BlurView>
+    );
+
+  return (
+    <View className="rounded-[14px] bg-[#262d28] overflow-hidden">
+      {children}
+    </View>
+  );
+}
 
 function PremiumOptions() {
   const [selectedPlan, setSelectedPlan] = useState<"year" | "month">("year");
 
   return (
-    <View className="mt-[14px] items-center">
-      <BlurView intensity={16} className="rounded-[14px] overflow-hidden">
+    <View className="mt-[14px] items-center flex gap-4">
+      <ItemWrapper>
         <PremiumOptionItem
           title="1 Month"
           isSelected={selectedPlan === "month"}
@@ -28,9 +43,9 @@ function PremiumOptions() {
           }
           handleSelection={() => setSelectedPlan("month")}
         />
-      </BlurView>
+      </ItemWrapper>
 
-      <BlurView intensity={16} className="rounded-[14px] overflow-hidden mt-4">
+      <ItemWrapper>
         <PremiumOptionItem
           title="1 Year"
           description={
@@ -46,7 +61,7 @@ function PremiumOptions() {
           isSelected={selectedPlan === "year"}
           handleSelection={() => setSelectedPlan("year")}
         />
-      </BlurView>
+      </ItemWrapper>
     </View>
   );
 }

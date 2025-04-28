@@ -14,6 +14,7 @@ module.exports = {
         "rubik-medium": ["Rubik-Medium"],
         "rubik-extrabold": ["Rubik-ExtraBold"],
         "sf-regular": ["SF-Pro-Text-Regular"],
+        "sf-semibold": ["SF-Pro-Text-Semibold"],
         "sf-bold": ["SF-Pro-Text-Bold"],
         "visbycf-heavy": ["Visbycf-heavy"],
       },

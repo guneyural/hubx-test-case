@@ -1,6 +1,8 @@
-import { Platform, Text, TextProps } from "react-native";
+import { Platform, Text, TextProps, View } from "react-native";
 import React from "react";
 import { cn } from "../../lib/utils";
+import { LinearGradient } from "expo-linear-gradient";
+import MaskedView from "@react-native-masked-view/masked-view";
 
 type FontWeight =
   | "light"
@@ -33,7 +35,7 @@ const fontMap: Record<FontFamily, Record<FontWeight, string>> = {
     medium: "",
     extrabold: "",
     bold: "SF-Pro-Text-Bold",
-    semibold: "",
+    semibold: "SF-Pro-Text-Semibold",
   },
   visby: {
     extrabold: "Visbycf-heavy",
@@ -67,3 +69,44 @@ export const CustomText = ({
     </Text>
   );
 };
+
+interface StartEndType {
+  x: number;
+  y: number;
+}
+
+interface GradientTextProps {
+  children: React.ReactNode;
+  colors: string[];
+  height: number;
+  start: StartEndType;
+  end: StartEndType;
+}
+
+export const GradientText = ({
+  children,
+  colors,
+  height,
+  end,
+  start,
+}: GradientTextProps) => {
+  return (
+    <MaskedView
+      maskElement={
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          {children}
+        </View>
+      }
+      style={{ height }}
+    >
+      <LinearGradient
+        colors={colors}
+        start={start}
+        end={end}
+        style={{ flex: 1 }}
+      />
+    </MaskedView>
+  );
+};
+
+export default GradientText;

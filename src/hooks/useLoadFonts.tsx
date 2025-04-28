@@ -15,6 +15,7 @@ export default function useLoadFonts() {
           "Rubik-Bold": require("../../assets/fonts/Rubik-Bold.ttf"),
           "Rubik-ExtraBold": require("../../assets/fonts/Rubik-ExtraBold.ttf"),
 
+          "SF-Pro-Text-Semibold": require("../../assets/fonts/SF-Pro-Text-Semibold.otf"),
           "SF-Pro-Text-Regular": require("../../assets/fonts/SF-Pro-Text-Regular.otf"),
           "SF-Pro-Text-Bold": require("../../assets/fonts/SF-Pro-Text-Bold.otf"),
 
