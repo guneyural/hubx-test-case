@@ -10,6 +10,7 @@ function PaginationDots({ currentIndex, totalDots }: Props) {
     <View className="flex flex-row justify-center items-center gap-2 mb-[12.5px] mt-[32.5px]">
       {Array.from({ length: totalDots }, (_, index) => (
         <View
+          testID={`pagination-dot-${index}`}
           key={index}
           className={`rounded-full
              ${

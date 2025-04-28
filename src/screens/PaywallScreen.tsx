@@ -46,22 +46,34 @@ function PaywallScreen() {
         resizeMode="cover"
       />
 
-      <Pressable
-        onPress={() => {
-          dispatch(setOnboardingCompleted(true));
+      <View
+        style={{
+          top: insets.top + 8,
+          position: "absolute",
+          right: 19,
+          zIndex: 60,
         }}
-        className="items-center justify-center w-6 h-6 bg-[#00000066] absolute right-[19px] rounded-full z-[60]"
-        style={{ top: insets.top + 8 }}
+        testID="paywall-close-button-wrapper"
       >
-        <Image source={require("../../assets/images/Paywall/CloseIcon.png")} />
-      </Pressable>
+        <Pressable
+          onPress={() => {
+            dispatch(setOnboardingCompleted(true));
+          }}
+          className="items-center justify-center w-6 h-6 bg-[#00000066] rounded-full"
+          accessibilityRole="button"
+        >
+          <Image
+            source={require("../../assets/images/Paywall/CloseIcon.png")}
+          />
+        </Pressable>
+      </View>
 
       <View className="flex-1 relative z-50">
         <ScrollView
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: 26 }}
         >
-          <View className="mt-[264px] ml-6">
+          <View className="mt-[264px] ml-6" testID="paywall-title-section">
             <CustomText
               font="visby"
               weight="extrabold"
@@ -98,7 +110,10 @@ function PaywallScreen() {
       </View>
 
       <View className="relative z-50 items-center">
-        <PrimaryButton text="Try free for 3 days" />
+        <PrimaryButton
+          text="Try free for 3 days"
+          testID="paywall-primary-button"
+        />
 
         <CustomText
           weight="light"

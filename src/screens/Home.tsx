@@ -82,7 +82,7 @@ function HomeScreen() {
         </View>
       </SafeAreaView>
 
-      <BottomNavbar />
+      <BottomNavbar testID="bottom-navbar"/>
     </View>
   );
 }

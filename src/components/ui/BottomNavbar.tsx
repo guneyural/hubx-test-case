@@ -36,7 +36,7 @@ function NavbarItem({ source, label, isActive = false }: NavbarItemProps) {
   );
 }
 
-function BottomNavbar() {
+function BottomNavbar({ testID }: { testID: string }) {
   const insets = useSafeAreaInsets();
   const route = useRoute(); // route.name ile mevcut rota anlaşılabilir ve buna göre ikonlarda güncelleme yapılabilir
 
@@ -46,6 +46,7 @@ function BottomNavbar() {
     <View
       className="h-[49px] border-t-[0.5px] bg-[#FFFFFFEB] border-[#13231B1A] flex-row"
       style={{ marginBottom: insets.bottom }}
+      testID={testID}
     >
       <NavbarItem
         source={require("../../../assets/images/BottomNavbar/HomeIcon.png")}

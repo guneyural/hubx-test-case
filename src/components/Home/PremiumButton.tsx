@@ -2,6 +2,7 @@ import { Image, TouchableOpacity, View } from "react-native";
 import GradientText, { CustomText } from "../ui/CustomText";
 
 function PremiumButton() {
+  
   return (
     <TouchableOpacity className="rounded-[12px] bg-[#24201A] h-16 my-6 px-5 flex-row items-center justify-between">
       <View className="flex-row items-center gap-4">
