@@ -12,22 +12,25 @@ interface Props {
 function FeatureItem({ icon, title, subtitle, index }: Props) {
   return (
     <View
-      className="ml-2"
-      style={
-        index === 1
+      className="pl-2"
+      style={{
+        borderRadius: 14,
+        overflow: "visible",
+        height: 135,
+        ...(index === 1
           ? {
-              shadowColor: "#000",
+              shadowColor: "#000000",
               shadowOffset: { width: 0, height: 4 },
               shadowOpacity: 0.25,
               shadowRadius: 4,
               elevation: 4,
             }
-          : undefined
-      }
+          : {}),
+      }}
     >
       <BlurView
         intensity={16}
-        className="rounded-lg overflow-hidden h-[130px] w-[156px]"
+        className="rounded-[14px] overflow-hidden h-[130px] w-[156px]"
       >
         <View className="rounded-[14px] p-4">
           <Image source={icon} className="w-[36px] h-[35.68px]" />
