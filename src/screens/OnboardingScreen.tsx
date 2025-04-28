@@ -20,7 +20,7 @@ function OnboardingScreen({ navigation }: Props) {
     if (step < 1) {
       setStep(step + 1);
     } else {
-      console.log("End of onboarding. Paywall screen navigation");
+      navigation.navigate("PaywallScreen");
     }
   };
 

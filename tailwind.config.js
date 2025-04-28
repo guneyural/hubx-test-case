@@ -15,6 +15,7 @@ module.exports = {
         "rubik-extrabold": ["Rubik-ExtraBold"],
         "sf-regular": ["SF-Pro-Text-Regular"],
         "sf-bold": ["SF-Pro-Text-Bold"],
+        "visbycf-heavy": ["Visbycf-heavy"],
       },
     },
     screens: {

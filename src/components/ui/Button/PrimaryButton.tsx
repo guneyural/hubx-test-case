@@ -7,16 +7,16 @@ interface Props {
   onPress?: () => void;
 }
 
-function MainIconButton({ text, onPress }: Props) {
+function PrimaryButton({ text, onPress }: Props) {
   return (
     <Pressable
-      className="bg-main px-4 rounded-xl h-[56px] w-[327px] gap-2 items-center justify-center"
+      className="bg-main px-4 rounded-[14px] h-[52px] w-[327px] gap-2 items-center justify-center"
       onPress={onPress}
     >
       <CustomText
-        className="text-white text-center !tracking-[-0.24px] text-[15px] leading-[24px]"
-        font="sf"
-        weight="bold"
+        className="text-white text-center !tracking-[-0.24px] text-[16px] leading-[24px]"
+        font="rubik"
+        weight="medium"
       >
         {text}
       </CustomText>
@@ -24,4 +24,4 @@ function MainIconButton({ text, onPress }: Props) {
   );
 }
 
-export default MainIconButton;
+export default PrimaryButton;

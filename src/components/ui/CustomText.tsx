@@ -9,7 +9,7 @@ type FontWeight =
   | "semibold"
   | "extrabold"
   | "bold";
-type FontFamily = "rubik" | "sf";
+type FontFamily = "rubik" | "sf" | "visby";
 
 interface CustomTextProps extends TextProps {
   children: React.ReactNode;
@@ -33,6 +33,14 @@ const fontMap: Record<FontFamily, Record<FontWeight, string>> = {
     medium: "",
     extrabold: "",
     bold: "SF-Pro-Text-Bold",
+    semibold: "",
+  },
+  visby: {
+    extrabold: "Visbycf-heavy",
+    light: "",
+    regular: "",
+    medium: "",
+    bold: "",
     semibold: "",
   },
 };

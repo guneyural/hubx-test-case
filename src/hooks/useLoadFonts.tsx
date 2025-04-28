@@ -17,6 +17,8 @@ export default function useLoadFonts() {
 
           "SF-Pro-Text-Regular": require("../../assets/fonts/SF-Pro-Text-Regular.otf"),
           "SF-Pro-Text-Bold": require("../../assets/fonts/SF-Pro-Text-Bold.otf"),
+
+          "Visbycf-heavy": require("../../assets/fonts/Visbycf-heavy.otf"),
         });
 
         setFontsLoaded(true);

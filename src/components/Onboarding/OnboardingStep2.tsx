@@ -61,9 +61,11 @@ function OnboardingStep2() {
           style={{
             position: "absolute",
             bottom: -40,
-            width: "100%",
+            width: 300,
             height: 90,
             zIndex: 0,
+            left: "50%",
+            transform: [{ translateX: -163.5 }],
           }}
         />
       </View>
